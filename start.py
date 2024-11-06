@@ -13,6 +13,7 @@ import traceback
 
 #CM:移动 CU:联通 CT:电信  AB:境外 DEF:默认
 #修改需要更改的dnspod域名和子域名
+#NameSilo不支持多线解析，只能选DEF默认线路
 DOMAINS = {
     "quanxxxhost.com": {"@": ["CM","CU","CT"]}
 }
@@ -134,14 +135,19 @@ def main(cloud):
             cf_cmips = cfips["data"]["CM"]
             cf_cuips = cfips["data"]["CU"]
             cf_ctips = cfips["data"]["CT"]
+            cf_defips = cfips["data"]["AllAvg"] 
             for domain, sub_domains in DOMAINS.items():
                 for sub_domain, lines in sub_domains.items():
+                    if DNS_SERVER == 4 and len(lines)!=1:
+                        log_cf2dns.logger.info("域名解析为NameSilo时，线路只能填DEF")
+                        return
+
                     #下面5个数组存的是不同线路最新获取的优选IP列表
                     temp_cf_cmips = cf_cmips.copy()
                     temp_cf_cuips = cf_cuips.copy()
                     temp_cf_ctips = cf_ctips.copy()
                     temp_cf_abips = cf_ctips.copy()
-                    temp_cf_defips = cf_ctips.copy()
+                    temp_cf_defips = cf_defips.copy()
                     if DNS_SERVER == 1:
                         ret = cloud.get_record(domain, 20, sub_domain, "CNAME")
                         if ret["code"] == 0:
