@@ -1,8 +1,11 @@
 ### 功能介绍
 
 本项目的主要功能是动态获取cf优选ip，并将域名实时解析到这些优选IP上，以达到网站使用cloudflare CDN并使用国内访问速度更快的CDN节点。
+
 ★ 动态获取cf优选ip的接口由vps789.com提供
+
 ★ 网站使用CF优选IP的教程参考：https://www.vpsjxw.com/vps_use/cloudflare_select_ip/
+
 ★ 本工具主要是将网站域名动态解析到获取到的优选ip上，目前支持阿里云DNS、DNSPod、华为云DNS、NameSilo
 
 ### VPS789.com提供CF优选IP接口
@@ -41,5 +44,7 @@ python start.py
 
 ### 鸣谢
 感谢以下项目提供技术支撑与实现思路
+
 [cf2dns](https://github.com/ddgth/cf2dns)@ddgth
+
 [CloudflareSpeedTest](https://github.com/XIU2/CloudflareSpeedTest)@XIU2
