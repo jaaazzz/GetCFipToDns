@@ -8,14 +8,21 @@
 
 ★ 本工具主要是将网站域名动态解析到获取到的优选ip上，目前支持阿里云DNS、DNSPod、华为云DNS、NameSilo
 
-### VPS789.com提供CF优选IP接口
-1、支持对CF优选IP的三网实时监测延迟、丢包率，支持查看24小时、一个月的监测数据。
+<br>
 
-2、支持对CF优选IP的下载速度进行测试
+### CF优选IP接口(VPS789.com提供)
 
-3、基于CloudFlareST工具生成一个优选IP池，vps789的优选IP每天定时淘汰1/3网络不好的IP，从优选IP池补充到vps789中继续监测。通过持续补充优选IP和IP优胜略汰机制，保证vps789上的IP都是优中选优。
+**CF优选IP机制说明：**
 
-4、vps789优选IP监控页面地址：https://vps789.com/cfip
+基于CloudFlareST工具生成一个[初选IP池]，vps789固定24小时监测200-500个IP。每天根据网络情况综合评估，淘汰1/3网络较差的IP，然后从[初选IP池]补充到vps789中继续监测。**通过持续补充优选IP和IP优胜略汰机制，保证vps789上的IP都是优中选优。**
+
+2、支持对cloudFlare IP进行延迟、丢包率、下载速度、晚高峰网络状态等多个维度的筛选
+
+3、vps789优选IP监控页面地址：https://vps789.com/cfip
+
+4、VPS789优选IP动态获取接口：https://vps789.com/public/sum/cfIpApi
+
+<br>
 
 ### 使用方法
 
@@ -27,9 +34,7 @@
 pip install -r requirements.txt
 ```
 
-1.  登录DNS解析平台,获取 SecretId、SecretKey。
-   如果使用阿里云DNS，注意需要添加DNS控制权限**AliyunDNSFullAccess**
-   如果使用NameSilo只用填SecretKey即可。
+1.  登录DNS解析平台，获取 SecretId、SecretKey。如果使用NameSilo只用填SecretKey即可。
 
 2.  将脚本下载到本地修改start.py中的SecretId、SecretKey
 
@@ -39,8 +44,16 @@ pip install -r requirements.txt
 4.  运行程序，如果能够正常运行可以选择cron定时执行(建议1个小时执行一次)
 
 ```python
-python start.py
+#域名解析在阿里云DNS
+python cfipToAliDns.py
+#域名解析在DnsPod
+python cfipToDnsPod.py
+#域名解析在华为云DNS
+python cfipToHwDns.py
+#域名解析在NameSilo
+python cfipToNameSilo.py
 ```
+<br>
 
 ### 鸣谢
 感谢以下项目提供技术支撑与实现思路

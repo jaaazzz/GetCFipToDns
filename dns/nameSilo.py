@@ -20,6 +20,8 @@ class NameSiloClient:
             response = requests.get(url)
             response_body = response.json()
             if response.status_code == 200:
+                if response_body["reply"]["code"] !=300:
+                    raise Exception('namesilo接口错误:'+response_body["reply"]["detail"])
                 res={}
                 res["code"]=0
                 res["data"]={}
