@@ -30,18 +30,17 @@
 
 1.  安装运行脚本所需依赖
 
-```python
-pip install -r requirements.txt
-```
-
-1.  登录DNS解析平台，获取 SecretId、SecretKey。如果使用NameSilo只用填SecretKey即可。
-
-2.  将脚本下载到本地修改start.py中的SecretId、SecretKey
-
-3.  修改脚本中域名配置信息，可配置多个域名和多个子域名，注意选择DNS服务商
+      pip install -r requirements.txt
 
 
-4.  运行程序，如果能够正常运行可以选择cron定时执行(建议1个小时执行一次)
+2.  登录DNS解析平台，获取 SecretId、SecretKey。如果使用NameSilo只用填SecretKey即可。
+
+3.  将脚本下载到本地修改start.py中的SecretId、SecretKey
+
+4.  修改脚本中域名配置信息，可配置多个域名和多个子域名，注意选择DNS服务商
+
+
+5.  运行程序，如果能够正常运行可以选择cron定时执行(建议1个小时执行一次)
 
 ```python
 #域名解析在阿里云DNS
