@@ -44,13 +44,13 @@
 
 ```python
 #域名解析在阿里云DNS
-python cfipToAliDns.py
+python runAliDns.py
 #域名解析在DnsPod
-python cfipToDnsPod.py
+python runDnsPod.py
 #域名解析在华为云DNS
-python cfipToHwDns.py
+python runHwDns.py
 #域名解析在NameSilo
-python cfipToNameSilo.py
+python runNameSilo.py
 ```
 <br>
 
