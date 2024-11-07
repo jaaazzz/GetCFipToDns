@@ -16,11 +16,11 @@
 
 基于CloudFlareST工具生成一个[初选IP池]，vps789固定24小时监测200-500个IP。每天根据网络情况综合评估，淘汰1/3网络较差的IP，然后从[初选IP池]补充到vps789中继续监测。**通过持续补充优选IP和IP优胜略汰机制，保证vps789上的IP都是优中选优。**
 
-2、支持对cloudFlare IP进行延迟、丢包率、下载速度、晚高峰网络状态等多个维度的筛选
+★ 支持对cloudFlare IP进行延迟、丢包率、下载速度、晚高峰网络状态等多个维度的筛选
 
-3、vps789优选IP监控页面地址：https://vps789.com/cfip
+★ vps789优选IP监控页面地址：https://vps789.com/cfip
 
-4、VPS789优选IP动态获取接口：https://vps789.com/public/sum/cfIpApi
+★ VPS789优选IP动态获取接口：https://vps789.com/public/sum/cfIpApi
 
 <br>
 
