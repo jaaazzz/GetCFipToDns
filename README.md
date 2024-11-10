@@ -35,7 +35,7 @@
 
 2.  登录DNS解析平台，获取 SecretId、SecretKey。如果使用NameSilo只用填SecretKey即可。
 
-3.  将脚本下载到本地修改start.py中的SecretId、SecretKey
+3.  将脚本下载到本地，修改启动文件runXXX.py中的SecretId、SecretKey
 
 4.  修改脚本中域名配置信息，可配置多个域名和多个子域名，注意选择DNS服务商
 
